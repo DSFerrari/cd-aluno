@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-	selector: 'ngbd-alert-basic',
-	standalone: true,
-	imports: [NgbAlertModule],
-	templateUrl: './alert-basic.html',
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
-export class NgbdAlertBasic {}
+export class AppComponent {
+  title = 'cad-aluno';
+}
