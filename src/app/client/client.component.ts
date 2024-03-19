@@ -20,4 +20,8 @@ export class ClientComponent {
   });
 
  }
+
+ save(){
+  this.students.push(this.formGroupStudent.value)
+ }
 }
