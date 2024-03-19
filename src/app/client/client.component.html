@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-7 m-auto">
     <h1>Cadastro de alunos</h1>
-  <form>
+  <form [formGroup]="formGroupStudent">
     <div class="mb-3">
       <label for="matricula" class="form-label">Matricula</label>
       <input
       type="text"
       class="form-control"
       id="matricula"
-      name="matricula"
+      formControlName="id"
       >
     </div>
     <div class="mb-3">
@@ -18,7 +18,7 @@
       type="text"
       class="form-control"
       id="nome"
-      name="nome"
+      formControlName="name"
       >
     </div>
     <div class="mb-3">
@@ -27,7 +27,7 @@
       type="text"
       class="form-control"
       id="Curso"
-      name="Curso"
+      formControlName="course"
       >
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>

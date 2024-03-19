@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Student } from './student';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-client',
@@ -7,6 +8,16 @@ import { Student } from './student';
   styleUrl: './client.component.css'
 })
 export class ClientComponent {
- students: Student[] = [
- ];
+ students: Student[] = [];
+
+ formGroupStudent : FormGroup;
+
+ constructor(private formBuilder: FormBuilder){
+  this.formGroupStudent = formBuilder.group({
+      id : [''],
+      name : [''],
+      course : ['']
+  });
+
+ }
 }
