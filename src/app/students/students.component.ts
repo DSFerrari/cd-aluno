@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Student } from './student';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrl: './students.component.css'
 })
-export class StudentsComponent {
+export class StudentsComponent implements OnInit {
     students: Student[] = [];
 
     formGroupStudent : FormGroup;
 
-    constructor(private formBuilder: FormBuilder){
+    constructor(private formBuilder: FormBuilder, private service: StudentService){
      this.formGroupStudent = formBuilder.group({
          id : [''],
          name : [''],
@@ -20,7 +21,14 @@ export class StudentsComponent {
      });
 
     }
-
+  ngOnInit(): void {
+ this.loadstudents();
+  }
+  loadstudents(){
+ this.service.getStudents().subscribe({
+  next: data => this.students = data
+ });
+}
     save(){
      this.students.push(this.formGroupStudent.value)
     }
