@@ -1,24 +1,9 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Diego",
-      "course": "Matemática"
-    },
-    {
-      "id": "2",
-      "name": "Jorge",
-      "course": "Portugues"
-    },
-    {
-      "id": "3",
-      "name": "Carlos",
-      "course": "Computação"
-    },
-    {
-      "id": "4",
-      "name": "M",
-      "course": "História"
+      "id": 1,
+      "name": "2",
+      "course": "2"
     }
   ]
 }
