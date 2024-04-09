@@ -10,7 +10,13 @@
       class="form-control"
       id="nome"
       formControlName="name"
-      >
+      />
+      <small *ngIf="submited && name.hasError('minlength')" class="text-danger">
+          * O nome tem que ter no mínimo 3 caracteres
+      </small>
+      <small *ngIf="submited && name.hasError('required')" class="text-danger">
+        * O Nome é requerido!
+    </small>
     </div>
     <div class="mb-3">
       <label for="Curso" class="form-label">Curso</label>
@@ -19,9 +25,12 @@
       class="form-control"
       id="Curso"
       formControlName="course"
-      >
+      />
+      <small *ngIf="submited && course.hasError('required')" class="text-danger">
+        * O Curso é requerido!
+    </small>
     </div>
-    <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+    <button type="submit" class="btn btn-success" (click)="save()">Salvar</button>
   </form>
 
     <h2 class="mt-5 text-center">Alunos:</h2>
@@ -31,7 +40,7 @@
           <th scope="col">Matricula</th>
           <th scope="col">Nome</th>
           <th scope="col">Curso</th>
-          <th class="d-flex justify-content-end" scope="col">Opcoes</th>
+          <th class="text-center" scope="col">Opcoes</th>
         </tr>
       </thead>
       <tbody>
@@ -40,7 +49,7 @@
           <td>{{student.name}}</td>
           <td>{{student.course}}</td>
         <td class="d-flex jusitfy-content-end">
-          <button  class="btn btn-primary" (click)="edit(student)">Editar</button>
+          <button  class="btn btn-primary me-2" (click)="edit(student)">Editar</button>
           <button  class="btn btn-primary" (click)="delete(student)">Remover</button>
         </td>
           </tr>
